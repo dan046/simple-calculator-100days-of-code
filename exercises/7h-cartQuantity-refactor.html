@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      console.log(`Cart quantity: ${cartQuantity}`);
+    "
+    >
+      Show Quantity
+    </button>
+
+    <button
+      onclick="
+      updateCartQuanity(1)
+    "
+    >
+      Add to Cart
+    </button>
+
+    <button
+      onclick="
+      updateCartQuanity(2)
+    "
+    >
+      +2
+    </button>
+
+    <button
+      onclick="
+      updateCartQuanity(3)
+    "
+    >
+      +3
+    </button>
+
+    <button
+      onclick="
+      updateCartQuanity(4)
+    "
+    >
+      +4
+    </button>
+
+    <button
+      onclick="
+      updateCartQuanity(5)
+    "
+    >
+      +5
+    </button>
+
+    <!-- vvv This code was changed. vvv -->
+    <button
+      onclick="
+      updateCartQuanity(-1)
+    "
+    >
+      Remove from cart
+    </button>
+
+    <button
+      onclick="
+      updateCartQuanity(-2)
+    "
+    >
+      -2
+    </button>
+
+    <button
+      onclick="
+      updateCartQuanity(-3)
+    "
+    >
+      -3
+    </button>
+    <!-- ^^^ This code was changed. ^^^ -->
+
+    <button
+      onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+    "
+    >
+      Reset Cart
+    </button>
+
+    <script>
+      let cartQuantity = 0
+      const updateCartQuanity = (change) => {
+        if (cartQuantity + change > 10) {
+          alert("The cart is full")
+          return
+        } else if (cartQuantity + change < 0) {
+          alert("Not enough items in cart")
+          return
+        }
+        cartQuantity += change
+        console.log(`Cart quantity: ${cartQuantity}`)
+      }
+    </script>
+  </body>
+</html>

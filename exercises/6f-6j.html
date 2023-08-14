@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Flip Game</title>
+  </head>
+  <body>
+    <script>
+      const coin = Math.random()
+      const guess = "heads"
+      //   let result = ""
+      //   if (coin < 0.5) {
+      //     result = "heads"
+      //   } else {
+      //     result = "tails"
+      //   }
+      //   if (guess === result){
+      //     console.log(`Your guess: ${guess}. You guessed it right! You win!`)
+      //   } else {
+      //     console.log(`Your guess: ${guess}. You guessed it wrong! You lose!`)
+      //   }
+      //   console.log(`Coin result: ${result}`)
+      // Ternary version
+      const result = coin < 0.5 ? "heads" : "tails"
+      console.log(`Coin result: ${result}`)
+      
+      const answer =
+        guess === result
+          ? `Your guess: ${guess}. You guessed it right! You win!`
+          : `Your guess: ${guess}. You guessed it wrong! You lose!`
+      console.log(answer)
+    </script>
+  </body>
+</html>
