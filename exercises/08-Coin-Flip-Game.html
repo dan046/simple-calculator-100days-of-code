@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Flip Game</title>
+  </head>
+  <body>
+    <!-- This project was refactored. Implemented function, score object and local storage and display result and a reset button-->
+    <button onclick="playGame('heads')">Heads</button>
+
+    <button onclick="playGame('tails')">Tails</button>
+
+    <button
+      onclick="
+    alert(`Game is reset. Wins: ${score.wins = 0} Losses: ${score.losses = 0}`)
+    localStorage.removeItem('score')
+    "
+    >
+      Reset
+    </button>
+    <script>
+      let score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+      }
+
+      const playGame = (guess) => {
+        const coin = Math.random()
+        const result = coin < 0.5 ? "heads" : "tails"
+
+        result === guess ? (score.wins += 1) : (score.losses += 1)
+
+        localStorage.setItem("score", JSON.stringify(score))
+
+        return guess === result
+          ? alert(
+              `Coin result: ${result}. Your guess: ${guess}. You guessed it right! You win!
+              Wins: ${score.wins} Losses: ${score.losses}
+              `
+            )
+          : alert(
+              `Coin result: ${result}. Your guess: ${guess}. You guessed it wrong! You lose!
+              Wins: ${score.wins} Losses: ${score.losses}
+              `
+            )
+      }
+    </script>
+  </body>
+</html>

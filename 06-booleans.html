@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      // true
+      // false
+
+      // console.log(3 < 5)
+      // console.log(3 > 5)
+
+      // if (true) {
+      //   // runs the code
+      //   console.log("hello")
+      // } else {
+      //   // basically if the value is false, this will run.
+      //   console.log("else")
+      // }
+
+      // //   if (false) {
+      // //     // will not run the code
+      // //     console.log("hello")
+      // //   }
+
+      // const age = 15
+      // if (age >= 18) {
+      //   console.log("You can drive.")
+      // } else if (age >= 14) {
+      //   console.log("Almost there!.")
+      // } else {
+      //   console.log("Not old enough.")
+      // }
+      // if (5){ // Truthy value - because it behaves just like true
+      //   console.log('truthy')
+      // }
+
+      // if (0){ // Falsy value - because it behaves just like false
+      //   console.log('truthy')
+      // }
+
+      // const cartQuantity = 5
+
+      // if (cartQuantity) {
+      //   console.log('Cart has products')
+      // }
+      true ? "truthy" : "falsy"
+
+      const result = true ? "truthy" : "falsy"
+
+      // Short circuit evaluation
+      false && console.log('hello') // The left side is falsy, so it doesn't even run the code. The && operator stops early or short circuits and it it doesn't even run the code on the right.
+      const message = false && console.log('hello')
+      const message2 = 5 && console.log('hello')
+
+      const currency = 'EUR' || 'USD' //
+    </script>
+  </body>
+</html>

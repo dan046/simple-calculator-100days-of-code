@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Object Exercises</title>
+  </head>
+  <body>
+    <script>
+      const basketball = {
+        price: 2095,
+      }
+      console.log(basketball)
+      basketball.price = 2095 + 500
+      console.log(basketball.price)
+      basketball["delivery-time"] = "3 days"
+      console.log(basketball)
+
+      const shirt1 = {
+        name: "Blue Shirt",
+        price: 699,
+      }
+      const shirt2 = {
+        name: "White Shirt",
+        price: 499,
+      }
+      const comparePrice = (prod1, prod2) => {
+        return prod1.price > prod2.price ? prod2 : prod1
+      }
+      console.log(comparePrice(shirt1, shirt2))
+
+      const shirt3 = {
+        name: "White Shirt",
+        price: 499,
+      }
+      const shirt4 = {
+        name: "White Shirt",
+        price: 499,
+      }
+
+      const isSameProduct = (product1, product2) => {
+        return (
+          product1.name === product2.name && product1.price === product2.price
+        )
+      }
+
+      console.log(isSameProduct(shirt3, shirt4))
+
+      // Destructured version
+      const { name: shirt3Name, price: shirt3Price } = shirt3
+      const { name: shirt4Name, price: shirt4Price } = shirt4
+
+      const areSameProducts = isSameProduct(
+        { name: shirt3Name, price: shirt3Price },
+        { name: shirt4Name, price: shirt4Price }
+      )
+
+      console.log(areSameProducts)
+
+      const greeting = "Good Morning!"
+      console.log(greeting.toLocaleLowerCase().repeat(2))
+    </script>
+  </body>
+</html>
