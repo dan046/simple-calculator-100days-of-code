@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <div>
+      <h1>YouTube Subscribe</h1>
+      <button id="js-btn-subscribe" onclick="subscribe()">Subscribe</button>
+    </div>
+
+    <div>
+      <h2>Rock Paper Scissors</h2>
+      <p id="js-link"><a href="./09-rock-paper-scissors.html">Click Here</a></p>
+    </div>
+
+    <div>
+      <h2>Amazon Shipping Calculator</h2>
+
+      <section>
+        <p>Orders under $40 = +10$ shipping</p>
+        <p>Orders over $40 = FREE shipping</p>
+      </section>
+
+      <div>
+        <input
+          type="text"
+          name="input-text"
+          id="js-input-text"
+          placeholder="Cost of order"
+          onkeydown="onEnter(event)
+          "
+        />
+        <button type="submit" id="js-calculate" onclick="calculateCost()">
+          Calculate
+        </button>
+      </div>
+
+      <p id="js-result"></p>
+    </div>
+
+    <script>
+      String()
+
+      const btnSubscribe = document.getElementById("js-btn-subscribe")
+      const btnCalculate = document.getElementById("js-calculate")
+      const result = document.getElementById("js-result")
+
+      const subscribe = () => {
+        btnSubscribe.innerText === "Subscribe"
+          ? (btnSubscribe.innerText = "Subscribed")
+          : (btnSubscribe.innerText = "Subscribe")
+      }
+
+      const calculateCost = () => {
+        const inputText = document.getElementById("js-input-text")
+        let cost = Number(inputText.value)
+        return cost < 40
+          ? (result.innerHTML = `$${(cost += 10)}`)
+          : (result.innerHTML = `$${cost}`)
+      }
+
+      const onEnter = (event) => {
+        if (event.key === "Enter") calculateCost()
+      }
+    </script>
+  </body>
+</html>
