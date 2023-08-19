@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heads or Tails</title>
+  </head>
+  <body>
+    <button
+      id="js-heads-button"
+      onclick="heads()
+        "
+    >
+      heads
+    </button>
+    <button
+      id="js-tails-button"
+      onclick="tails()
+    "
+    >
+      tails
+    </button>
+    <p id="js-result"></p>
+    <script>
+      const heads = () => {
+        document.getElementById("js-result").innerHTML = "You chose: heads"
+      }
+      const tails = () => {
+        document.getElementById("js-result").innerHTML = "You chose: tails"
+      }
+    </script>
+  </body>
+</html>

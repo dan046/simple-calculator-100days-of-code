@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Button</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button id="js-done-button" onclick="">9b</button>
+    <script>
+      const button = document.querySelectorAll("button")
+      const doneBtn = document.querySelector("#js-done-button")
+      doneBtn.innerHTML = "9b done!"
+      console.log(button)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name Input</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="name"
+      id="js-input-name"
+      onkeydown="onEnter(event)"
+    />
+    <button type="submit" onclick="showResult()">Submit</button>
+    <p id="js-result"></p>
+    <script>
+      const inputText = document.getElementById("js-input-name")
+      const result = document.getElementById("js-result")
+
+      const showResult = () => {
+        return (result.innerHTML = `Your name is: ${inputText.value}`)
+      }
+
+      const onEnter = (event) => {
+        if (event.key === "Enter") showResult()
+      }
+    </script>
+  </body>
+</html>
