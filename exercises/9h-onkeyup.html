@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On Key Up</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="input"
+      id="js-input"
+      onkeyup="displayResult()"
+      aria-placeholder="Type Something"
+      placeholder="Type Something"
+    />
+    <p id="js-output"></p>
+    <script>
+      const displayResult = () => {
+        const inputText = document.getElementById("js-input")
+        const output = document.getElementById("js-output")
+        output.innerHTML = inputText.value
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Shipping Calculator</title>
+  </head>
+  <body>
+    <div>
+      <h2>Amazon Shipping Calculator</h2>
+
+      <section>
+        <p>Orders under $40 = +10$ shipping</p>
+        <p>Orders over $40 = FREE shipping</p>
+      </section>
+
+      <div>
+        <input
+          type="text"
+          name="input-text"
+          id="js-input-text"
+          placeholder="Cost of order"
+          onkeydown="onEnter(event)
+            "
+        />
+        <button type="submit" id="js-calculate" onclick="calculateCost()">
+          Calculate
+        </button>
+      </div>
+
+      <p id="js-result"></p>
+    </div>
+    <script>
+      const result = document.getElementById("js-result")
+      const calculateCost = () => {
+        const inputText = document.getElementById("js-input-text")
+        // let cost = Number(inputText.value)
+        // Convert value to cents
+        let cost = Number(inputText.value) * 100
+
+        cost < 4000 // $40.00 to 4000 cents
+          ? (result.innerHTML = `$${(cost += 1000) / 100}`) // $10.00 to 1000 cents and then converting back to dollars
+          : (result.innerHTML = `$${cost / 100}`) // Converting back to dollars
+
+        // return cost < 40 // toFixed(2) version
+        //   ? (result.innerHTML = `$${(cost += 10).toFixed(2)}`)
+        //   : (result.innerHTML = `$${cost.toFixed(2)}`)
+      }
+
+      const onEnter = (event) => {
+        if (event.key === "Enter") calculateCost()
+      }
+    </script>
+  </body>
+</html>
