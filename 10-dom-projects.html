@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects Refactored with CSS</title>
+  </head>
+  <style>
+    body {
+      font: 1em sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .subscribe {
+      margin-bottom: 30px;
+    }
+
+    .btn-subscribe {
+      background: black;
+      color: white;
+      cursor: pointer;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: larger;
+      font-weight: bold;
+    }
+
+    /* classList */
+    .is-subscribed {
+      color: black;
+      background-color: #f0f0f0;
+      font-size: larger;
+    }
+
+    .shipping-calculator {
+      display: flex;
+      gap: 5px;
+    }
+
+    .cost-input {
+      padding-left: 0.5rem;
+      padding: 10px;
+    }
+
+    .btn-calculate {
+      background-color: green;
+      font-size: large;
+      cursor: pointer;
+      color: white;
+      border: 0;
+    }
+  </style>
+  <body>
+    <div class="subscribe">
+      <h1>YouTube Subscribe</h1>
+      <button id="js-btn-subscribe" onclick="subscribe()" class="btn-subscribe">
+        Subscribe
+      </button>
+    </div>
+
+    <div>
+      <h2>Rock Paper Scissors</h2>
+      <p id="js-link"><a href="./09-rock-paper-scissors.html">Click Here</a></p>
+    </div>
+
+    <div>
+      <h2>Amazon Shipping Calculator</h2>
+
+      <section>
+        <p>Orders under $40 = +10$ shipping</p>
+        <p>Orders over $40 = FREE shipping</p>
+      </section>
+
+      <div class="shipping-calculator">
+        <input
+          type="text"
+          name="input-text"
+          id="js-input-text"
+          placeholder="Cost of order"
+          onkeydown="onEnter(event)
+          "
+          class="cost-input"
+        />
+        <button
+          type="submit"
+          id="js-calculate"
+          onclick="calculateCost()"
+          class="btn-calculate"
+        >
+          Calculate
+        </button>
+      </div>
+
+      <p id="js-result"></p>
+    </div>
+
+    <script>
+      String()
+
+      const btnSubscribe = document.getElementById("js-btn-subscribe")
+      const btnCalculate = document.getElementById("js-calculate")
+      const result = document.getElementById("js-result")
+
+      const subscribe = () => {
+        if (btnSubscribe.innerText === "Subscribe") {
+          btnSubscribe.innerText = "Subscribed"
+          btnSubscribe.classList.add("is-subscribed")
+        } else {
+          btnSubscribe.innerText = "Subscribe"
+          btnSubscribe.classList.remove("is-subscribed")
+        }
+      }
+
+      const calculateCost = () => {
+        const inputText = document.getElementById("js-input-text")
+        let cost = Number(inputText.value * 100)
+        return cost < 4000
+          ? (result.innerHTML = `$${(cost += 1000) / 100}`)
+          : (result.innerHTML = `$${cost / 100}`)
+      }
+
+      const onEnter = (event) => {
+        if (event.key === "Enter") calculateCost()
+      }
+    </script>
+  </body>
+</html>
