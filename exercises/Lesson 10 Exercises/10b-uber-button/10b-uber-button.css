@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.btn-request,
+.btn-schedule-later {
+  padding: 20px 40px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-request {
+  background: black;
+  color: white;
+}
+
+.btn-schedule-later {
+  background: rgb(230, 230, 230);
+}
