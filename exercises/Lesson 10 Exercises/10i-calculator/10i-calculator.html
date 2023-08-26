@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="10i-calculator.css" />
+    <script src="10i-calculator.js" defer></script>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calculator-container">
+      <div class="result-container">
+        <p id="js-calc-output" class="result"></p>
+      </div>
+      <div class="row-container">
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('1');
+          "
+        >
+          1
+        </button>
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('2');
+          "
+        >
+          2
+        </button>
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('3');
+          "
+        >
+          3
+        </button>
+        <button
+          class="btn-calc orange-btn"
+          onclick="
+            updateCalculation(' + ');
+          "
+        >
+          &plus;
+        </button>
+      </div>
+      <div class="row-container">
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('4');
+          "
+        >
+          4
+        </button>
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('5');
+          "
+        >
+          5
+        </button>
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('6');
+          "
+        >
+          6
+        </button>
+        <button
+          class="btn-calc orange-btn"
+          onclick="
+            updateCalculation(' - ');
+          "
+        >
+          &minus;
+        </button>
+      </div>
+      <div class="row-container">
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('7');
+          "
+        >
+          7
+        </button>
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('8');
+          "
+        >
+          8
+        </button>
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('9');
+          "
+        >
+          9
+        </button>
+        <button
+          class="btn-calc orange-btn"
+          onclick="
+            updateCalculation(' * ');
+          "
+        >
+          &times;
+        </button>
+      </div>
+      <div class="row-container">
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('0');
+          "
+        >
+          0
+        </button>
+        <button
+          class="btn-calc"
+          onclick="
+            updateCalculation('.');
+          "
+        >
+          .
+        </button>
+        <button
+          class="btn-calc"
+          onclick="
+            calculation = eval(calculation);
+            displayCalculation()
+            localStorage.setItem('calculation', calculation);
+          "
+        >
+          &equals;
+        </button>
+        <button
+          class="btn-calc orange-btn"
+          onclick="
+            updateCalculation(' / ');
+          "
+        >
+          &sol;
+        </button>
+      </div>
+      <div class="row-container">
+        <button
+          class="btn-calc clear-btn"
+          onclick="
+            calculation = '';
+            displayCalculation()
+            localStorage.setItem('calculation', calculation);
+          "
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
