@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="11-to-do-list.js" defer></script>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <div class="todo-container">
+      <header>
+        <h1>Todo List Practice 1</h1>
+      </header>
+      <div class="input-container">
+        <input
+          type="text"
+          name="input-field"
+          id="js-input-field"
+          class="input-field"
+          placeholder="Todo name"
+          aria-placeholder="Todo-name"
+        />
+        <button class="add-btn" id="js-add-btn" onclick="addTodo()">Add</button>
+      </div>
+      <div class="list-container">
+        <ul class="list" id="js-list"></ul>
+      </div>
+    </div>
+  </body>
+</html>
