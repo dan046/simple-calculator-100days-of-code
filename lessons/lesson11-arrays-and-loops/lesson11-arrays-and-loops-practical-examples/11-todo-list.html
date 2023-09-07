@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="11-to-do-list.js" defer></script>
+    <script src="11-todo-list.js" defer></script>
+    <link rel="stylesheet" href="11-todo-list.css" />
     <title>Todo List</title>
   </head>
   <body>
@@ -20,6 +21,7 @@
           placeholder="Todo name"
           aria-placeholder="Todo-name"
         />
+        <input type="date" name="date" id="js-date" />
         <button class="add-btn" id="js-add-btn" onclick="addTodo()">Add</button>
       </div>
       <div class="list-container">

@@ -1,27 +1,65 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --light-gray-bg: rgb(230, 230, 230);
+  --dark-bg: rgb(23, 23, 23);
+  --green-bg: rgb(65, 157, 39);
+
+  --white-color: rgb(255, 255, 255);
+  --dark-gray-color: rgb(88, 88, 88);
+  --delete-color: rgb(201, 36, 36);
+  --operation-orange-color: rgb(255, 170, 24);
+}
+
+body {
+  background: var(--dark-bg);
+  color: var(--white-color);
+  justify-content: center;
+  /* align-items: center; */
+  min-height: 100dvh;
+  font-size: large;
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  padding: 10px 15px;
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+.input-container,
+.list {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 250px 150px 100px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  .input-container {
+    .add-btn {
+      background: var(--green-bg);
+    }
   }
-  
-  :root {
-    --light-gray-bg: rgb(230, 230, 230);
-    --black-bg: rgb(0, 0, 0);
-    --green-bg: rgb(65, 157, 39);
-  
-    --white-color: rgb(255, 255, 255);
-    --dark-gray-color: rgb(88, 88, 88);
-    --error-color: rgb(201, 36, 36);
-    --operation-orange-color: rgb(255, 170, 24);
+
+  .delete-btn {
+    background: var(--delete-color);
   }
-  
-  body {
-    background: var(--black-bg);
-    color: var(--white-color);
-    justify-content: center;
-    align-items: center;
-    min-height: 100dvh;
-    display: flex;
-  }
-  
+}
+
+.list {
+  align-items: center;
+}
