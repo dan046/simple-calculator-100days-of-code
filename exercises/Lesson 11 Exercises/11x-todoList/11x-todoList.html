@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="11x-todoList.css" />
+    <script src="11x-todoList.js" defer></script>
+    <title>Todo List w/local Storage</title>
+  </head>
+  <body>
+    <div class="todoList-container">
+      <header>
+        <h1 class="todo-list-header">Todo List</h1>
+      </header>
+      <div class="input-field-container">
+        <input
+          type="text"
+          name="input-list"
+          id="js-input-list"
+          class="input-list"
+          placeholder="Add todo"
+        />
+        <input type="date" name="list-date" id="js-date" class="input-list" />
+        <button
+          type="submit"
+          class="add-btn"
+          id="js-add-btn"
+          onclick="addToList()"
+        >
+          Add
+        </button>
+      </div>
+      <div class="todo-container">
+        <ul class="list-container" id="js-list-container"></ul>
+      </div>
+    </div>
+  </body>
+</html>
