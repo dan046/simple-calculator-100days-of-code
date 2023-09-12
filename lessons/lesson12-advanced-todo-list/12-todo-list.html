@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <script src="12-todo-list.js" defer></script>
+    <link rel="stylesheet" href="12-todo-list.css" />
+    <title>Todo List Refactored</title>
+  </head>
+  <body>
+    <div class="todo-container">
+      <header>
+        <h1>Todo List Practice 1</h1>
+      </header>
+      <div class="input-container">
+        <input
+          type="text"
+          name="input-field"
+          id="js-input-field"
+          class="input-field"
+          placeholder="Todo name"
+          aria-placeholder="Todo-name"
+        />
+        <input type="date" name="date" id="js-date" />
+        <button class="add-btn" id="js-add-btn" onclick="addTodo()">Add</button>
+      </div>
+      <div class="list-container">
+        <ul class="list" id="js-list"></ul>
+      </div>
+    </div>
+  </body>
+</html>
