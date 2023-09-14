@@ -11,30 +11,9 @@
   <body>
     <h1>Rock Paper Scissors</h1>
     <div class="btn-container">
-      <button
-        onclick="
-          playGame('✊');
-        "
-        class="btn-rock"
-      >
-        ✊
-      </button>
-      <button
-        onclick="
-          playGame('✋');
-        "
-        class="btn-paper"
-      >
-        ✋
-      </button>
-      <button
-        onclick="
-          playGame('✌️');
-        "
-        class="btn-scissors"
-      >
-        ✌️
-      </button>
+      <button class="btn-rock" id="js-rock-btn">✊</button>
+      <button class="btn-paper" id="js-paper-btn">✋</button>
+      <button class="btn-scissors" id="js-scissors-btn">✌️</button>
     </div>
 
     <div class="result-container">
@@ -44,15 +23,8 @@
       </div>
       <h2 id="js-result"></h2>
       <p id="js-score"></p>
-      <button
-        onclick="
-          resetScore()
-        "
-        class="btn-reset"
-      >
-        Reset
-      </button>
-      <button class="auto-play-btn" onclick="autoPlay()" id="js-autoPlay-btn">Auto Play</button>
+      <button class="btn-reset" id="js-resetScore-btn">Reset</button>
+      <button class="auto-play-btn" id="js-autoPlay-btn">Auto Play</button>
     </div>
   </body>
 </html>

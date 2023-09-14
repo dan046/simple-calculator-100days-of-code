@@ -1,8 +1,40 @@
+const rockBtn = document.getElementById("js-rock-btn")
+const scissorsBtn = document.getElementById("js-paper-btn")
+const paperBtn = document.getElementById("js-scissors-btn")
+const autoPlayBtn = document.getElementById("js-autoPlay-btn")
+const resetScoreBtn = document.getElementById("js-resetScore-btn")
+const displayScoreEl = document.getElementById("js-score")
+const playerMoveEl = document.getElementById("js-player-move")
+const computerMoveEl = document.getElementById("js-computer-move")
+const resultEl = document.getElementById("js-result")
+const documentBody = document.body
+
 let score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
   draw: 0,
 }
+
+rockBtn.addEventListener("click", () => {
+  playGame("✊")
+})
+scissorsBtn.addEventListener("click", () => {
+  playGame("✋")
+})
+paperBtn.addEventListener("click", () => {
+  playGame("✌️")
+})
+
+// Implemented keydown hotkeys for users to play using their keyboard keys.
+documentBody.addEventListener("keydown", (e) => {
+  if (e.key === "r") {
+    playGame("✊")
+  } else if (e.key === "p") {
+    playGame("✋")
+  } else if (e.key === "s") {
+    playGame("✌️")
+  }
+})
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove()
@@ -43,15 +75,10 @@ function playGame(playerMove) {
 
   // How to use local storage.
   localStorage.setItem("score", JSON.stringify(score))
-  document.getElementById("js-result").innerHTML = `${result}`
 
-  document.getElementById(
-    "js-player-move"
-  ).innerHTML = `You chose <span>${playerMove}</span>`
-
-  document.getElementById(
-    "js-computer-move"
-  ).innerHTML = `Computer chose <span>${computerMove}</span>`
+  resultEl.innerHTML = `${result}`
+  playerMoveEl.innerHTML = `You chose <span>${playerMove}</span>`
+  computerMoveEl.innerHTML = `Computer chose <span>${computerMove}</span>`
 
   displayScore()
 }
@@ -73,35 +100,33 @@ function pickComputerMove() {
 }
 
 function displayScore() {
-  document.getElementById(
-    "js-score"
-  ).innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Draw: ${score.draw}`
+  displayScoreEl.innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Draw: ${score.draw}`
 }
 displayScore()
 
-function resetScore() {
+resetScoreBtn.addEventListener("click", () => {
   score.wins = 0
   score.losses = 0
   score.draw = 0
   localStorage.removeItem("score")
   displayScore()
-}
+})
 
 // This allows hoisting
 let isAutoPlay = false
 let intervalId
 
-function autoPlay() {
+autoPlayBtn.addEventListener("click", () => {
   if (!isAutoPlay) {
-    document.getElementById("js-autoPlay-btn").innerHTML = "Stop"
+    autoPlayBtn.innerHTML = "Stop"
     intervalId = setInterval(() => {
       const playerMove = pickComputerMove()
       playGame(playerMove)
     }, 1000)
     isAutoPlay = true
   } else {
-    document.getElementById("js-autoPlay-btn").innerHTML = "Auto play"
+    autoPlayBtn.innerHTML = "Auto play"
     clearInterval(intervalId)
     isAutoPlay = false
   }
-}
+})
