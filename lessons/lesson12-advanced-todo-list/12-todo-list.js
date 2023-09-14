@@ -5,11 +5,11 @@ const dateSelector = document.getElementById("js-date")
 
 let todoList = [
   {
-    name: "wash dishes",
+    name: "make dinner",
     dueDate: "2023-09-07",
   },
   {
-    name: "masturbate",
+    name: "wash dishes",
     dueDate: "2023-09-08",
   },
 ]
