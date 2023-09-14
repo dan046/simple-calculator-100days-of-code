@@ -14,7 +14,7 @@ let todoList = [
   },
 ]
 
-const renderTodoList = () => {
+function renderTodoList() {
   let todoListHTML = ""
 
   todoList.forEach((items, index) => {
@@ -39,7 +39,7 @@ function deleteTodo(index, deleteCount) {
   renderTodoList()
 }
 // Array push method
-const addTodo = () => {
+function addTodo() {
   const name = inputField.value
   const dueDate = dateSelector.value
 
