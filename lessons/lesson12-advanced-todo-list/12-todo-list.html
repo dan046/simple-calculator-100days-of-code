@@ -3,31 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
-    <script src="12-todo-list.js" defer></script>
     <link rel="stylesheet" href="12-todo-list.css" />
-    <title>Todo List Refactored</title>
+    <script src="12-todo-list.js" defer></script>
+    <title>Basic Todo List</title>
   </head>
   <body>
-    <div class="todo-container">
+    <div class="todo-list-container">
       <header>
-        <h1>Todo List Practice 1</h1>
+        <h1>Todo List</h1>
       </header>
-      <div class="input-container">
+      <form class="form-container" name="todo-form" id="js-todo-form">
         <input
           type="text"
-          name="input-field"
-          id="js-input-field"
+          name="input"
           class="input-field"
-          placeholder="Todo name"
-          aria-placeholder="Todo-name"
+          id="js-input-field"
+          placeholder="Add todo"
         />
-        <input type="date" name="date" id="js-date" />
-        <button class="add-btn" id="js-add-btn" onclick="addTodo()">Add</button>
-      </div>
+        <input type="date" name="date" id="js-date" class="date" />
+        <button type="submit" id="js-add-btn" class="add-btn">Add</button>
+      </form>
       <div class="list-container">
-        <ul class="list" id="js-list"></ul>
+        <ul id="js-list"></ul>
       </div>
+      <small id="js-error"></small>
     </div>
   </body>
 </html>

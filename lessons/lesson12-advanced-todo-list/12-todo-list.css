@@ -20,7 +20,6 @@ body {
   background: var(--dark-bg);
   color: var(--white-color);
   justify-content: center;
-  /* align-items: center; */
   min-height: 100dvh;
   font-size: large;
   display: flex;
@@ -28,6 +27,9 @@ body {
 
 ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 button {
@@ -38,28 +40,33 @@ button {
   font-weight: 600;
 }
 
-.input-container,
-.list {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 250px 150px 100px;
-}
-
-.todo-container {
+.todo-list-container {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  .input-container {
-    .add-btn {
-      background: var(--green-bg);
-    }
-  }
+}
 
-  .delete-btn {
-    background: var(--delete-color);
+.form-container,
+.list {
+  display: grid;
+  grid-template-columns: 250px 150px 100px;
+  gap: 5px;
+}
+
+.form-container {
+  .add-btn {
+    background-color: var(--green-bg);
   }
 }
 
 .list {
   align-items: center;
+}
+
+.delete-btn {
+  background-color: var(--delete-color);
+}
+
+.error {
+  color: var(--delete-color);
 }
