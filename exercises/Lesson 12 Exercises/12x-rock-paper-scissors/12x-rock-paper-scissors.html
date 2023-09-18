@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="12x-rock-paper-scissors.css" />
+    <script src="12x-rock-paper-scissors.js" defer></script>
+    <title>Rock Paper Scissors Game</title>
+  </head>
+  <body>
+    <main class="game-container">
+      <header>
+        <h1>Let's Play Rock, Paper, Scissors!</h1>
+      </header>
+
+      <section class="btn-container">
+        <button id="js-rock-btn" class="btn-rock">✊</button>
+        <button id="js-paper-btn" class="btn-paper">✋</button>
+        <button id="js-scissors-btn" class="btn-scissors">✌️</button>
+      </section>
+
+      <section class="move-container">
+        <p id="js-player-move" class="player-move"></p>
+        <p id="js-computer-move" class="computer-move"></p>
+      </section>
+
+      <section class="result-container">
+        <h2 class="result" id="js-result"></h2>
+      </section>
+
+      <section class="score-container">
+        <p id="js-score"></p>
+      </section>
+
+      <section
+        class="confirm-action-container"
+        id="js-confirmation-action-container"
+      ></section>
+
+      <section class="game-options-container">
+        <button class="btn-reset" id="js-reset-btn">Reset</button>
+        <button class="auto-play-btn" id="js-auto-play-btn">Auto Play</button>
+      </section>
+    </main>
+  </body>
+</html>
